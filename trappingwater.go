@@ -1,8 +1,6 @@
 // https://leetcode.com/problems/trapping-rain-water/
 package main
 
-import "fmt"
-
 func trap(height []int) int {
 	l := len(height)
 	if l == 1 {

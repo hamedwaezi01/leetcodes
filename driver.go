@@ -13,17 +13,24 @@ func main() {
 	// driverGenerateParanthesis()
 	// driverNextPermutation()
 	// driverPermute() //???
-	driverProductExceptSelf()
+	// driverProductExceptSelf()
+	driverFindMedianSortedArrays()
 }
 
-func driverProductExceptSelf(){
+func driverFindMedianSortedArrays() {
+	fmt.Println(findMedianSortedArrays([]int{1, 3}, []int{2}))
+	// fmt.Println(findMedianSortedArrays([]int{1, 2}, []int{3, 4}))
+	// fmt.Println(findMedianSortedArrays([]int{0, 0, 0, 0, 0}, []int{-1, 0, 0, 0, 0, 0, 1}))
+}
+
+func driverProductExceptSelf() {
 	// fmt.Println(productExceptSelf([]int{-1,1,0,-3,3}))
-	fmt.Println(productExceptSelf([]int{1,2,3,4}))
+	fmt.Println(productExceptSelf([]int{1, 2, 3, 4}))
 }
 
-func driverWaterTrap(){
+func driverWaterTrap() {
 	// fmt.Println(trap([]int{0,1,0,2,1,0,1,3,2,1,2,1}))
-	fmt.Println(trap([]int{4,2,3}))
+	fmt.Println(trap([]int{4, 2, 3}))
 }
 
 func driverNextPermutation() {

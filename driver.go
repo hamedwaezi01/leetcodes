@@ -14,7 +14,24 @@ func main() {
 	// driverNextPermutation()
 	// driverPermute() //???
 	// driverProductExceptSelf()
-	driverFindMedianSortedArrays()
+	// driverFindMedianSortedArrays()
+	driverRemoveNthFromEnd()
+}
+
+func driverRemoveNthFromEnd() {
+	input := []int{1, 2, 3, 4}
+	head := &ListNode{Val: input[0]}
+	current := head
+	for _, v := range input[1:] {
+		current.Next = &ListNode{Val: v}
+		current = current.Next
+	}
+	current = head
+	removeNthFromEnd(head, len(input))
+	for current != nil {
+		fmt.Print(current.Val, " ")
+		current = current.Next
+	}
 }
 
 func driverFindMedianSortedArrays() {

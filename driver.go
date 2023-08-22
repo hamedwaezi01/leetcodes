@@ -15,7 +15,16 @@ func main() {
 	// driverPermute() //???
 	// driverProductExceptSelf()
 	// driverFindMedianSortedArrays()
-	driverRemoveNthFromEnd()
+	// driverRemoveNthFromEnd()
+	driverjumpgame()
+}
+
+func driverjumpgame() {
+	// fmt.Println(jump([]int{2, 3, 1, 1, 4}))
+	// fmt.Println(jump([]int{2, 3, 0, 1, 4}))
+
+	fmt.Println(canReach([]int{4, 2, 3, 0, 3, 1, 2}, 5))
+	// fmt.Println(canReach([]int{3, 0, 2, 1, 2}, 2))
 }
 
 func driverRemoveNthFromEnd() {

@@ -23,7 +23,9 @@ func driverjumpgame() {
 	// fmt.Println(jump([]int{2, 3, 1, 1, 4}))
 	// fmt.Println(jump([]int{2, 3, 0, 1, 4}))
 
-	fmt.Println(canReach([]int{4, 2, 3, 0, 3, 1, 2}, 5))
+	// fmt.Println(canReach([]int{4, 2, 3, 0, 3, 1, 2}, 5))
+	fmt.Println(canReachVII("011010", 2, 3))
+	// fmt.Println(canReachVII("00111010", 3, 5))
 	// fmt.Println(canReach([]int{3, 0, 2, 1, 2}, 2))
 }
 

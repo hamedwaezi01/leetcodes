@@ -16,7 +16,14 @@ func main() {
 	// driverProductExceptSelf()
 	// driverFindMedianSortedArrays()
 	// driverRemoveNthFromEnd()
-	driverjumpgame()
+	// driverjumpgame()
+	driverSpiralMatrix()
+}
+
+func driverSpiralMatrix() {
+	// fmt.Println(spiralOrder([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}))
+	// fmt.Println(generateMatrix(4))
+	fmt.Println(spiralMatrixIII(1, 4, 0, 0))
 }
 
 func driverjumpgame() {

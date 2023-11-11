@@ -16,8 +16,35 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	}
 }
 
+// func kthElement(nums1, nums2 []int, start1, end1, start2, end2, k int) int {
+// 	l1, l2 := end1-start1, end2-start2
+
+// 	fmt.Println(k, start1, end1, start2, end2, "|", l1, l2, "|", l1/2, l2/2)
+// 	if l1 < 0 {
+// 		return nums2[k-start1]
+// 	}
+// 	if l2 < 0 {
+// 		return nums1[k-start2]
+// 	}
+// 	i1, i2 := start1+(l1/2), start2+(l2/2)
+// 	med1, med2 := nums1[i1], nums2[i2]
+// 	if i1+i2 < k {
+// 		if med1 > med2 {
+// 			return kthElement(nums1, nums2, start1, end1, i2+1, end2, k)
+// 		} else {
+// 			return kthElement(nums1, nums2, i1+1, end1, start2, end2, k)
+// 		}
+// 	} else {
+// 		if med1 > med2 {
+// 			return kthElement(nums1, nums2, start1, i1-1, start2, end2, k)
+// 		} else {
+// 			return kthElement(nums1, nums2, start1, end1, start2, i2-1, k)
+// 		}
+// 	}
+// }
+
 func kthElement(nums1, nums2 []int, start1, end1, start2, end2, k int) int {
-	l1, l2 := end1-start1, end2-start2
+	l1, l2 := end1-start1+1, end2-start2+1
 
 	fmt.Println(k, start1, end1, start2, end2, "|", l1, l2, "|", l1/2, l2/2)
 	if l1 < 0 {
@@ -27,18 +54,22 @@ func kthElement(nums1, nums2 []int, start1, end1, start2, end2, k int) int {
 		return nums1[k-start2]
 	}
 	i1, i2 := start1+(l1/2), start2+(l2/2)
-	med1, med2 := nums1[i1], nums2[i2]
-	if i1+i2 < k {
-		if med1 > med2 {
-			return kthElement(nums1, nums2, start1, end1, i2+1, end2, k)
-		} else {
-			return kthElement(nums1, nums2, i1+1, end1, start2, end2, k)
-		}
-	} else {
-		if med1 > med2 {
-			return kthElement(nums1, nums2, start1, i1-1, start2, end2, k)
-		} else {
-			return kthElement(nums1, nums2, start1, end1, start2, i2-1, k)
-		}
+	if i1 > i2 {
+		return kthElement(nums2, nums1, start2, end2, start1, end1, k)
 	}
+	med1, med2 := nums1[i1], nums2[i2]
+
+	// if i1+i2 < k {
+	if med1 > med2 {
+		return kthElement(nums1, nums2, start1, end1, i2+1, end2, k)
+	} else {
+		return kthElement(nums1, nums2, i1+1, end1, start2, end2, k)
+	}
+	// } else {
+	// if med1 > med2 {
+	// 	return kthElement(nums1, nums2, start1, i1-1, start2, end2, k)
+	// } else {
+	// 	return kthElement(nums1, nums2, start1, end1, start2, i2-1, k)
+	// }
+	// }
 }

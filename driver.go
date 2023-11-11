@@ -17,13 +17,28 @@ func main() {
 	// driverFindMedianSortedArrays()
 	// driverRemoveNthFromEnd()
 	// driverjumpgame()
-	driverSpiralMatrix()
+	// driverSpiralMatrix()
+	driverLengthOfLIS()
+}
+
+func driverLengthOfLIS() {
+	// fmt.Println(lengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18}), 4)
+	fmt.Println(lengthOfLIS([]int{0, 1, 0, 3, 2, 3}), 4)
 }
 
 func driverSpiralMatrix() {
 	// fmt.Println(spiralOrder([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}))
 	// fmt.Println(generateMatrix(4))
-	fmt.Println(spiralMatrixIII(1, 4, 0, 0))
+	// fmt.Println(spiralMatrixIII(1, 4, 0, 0))
+	head := &ListNode{}
+	headhead := head
+	input := []int{3, 0, 2, 6, 8, 1, 7, 9, 4, 2, 5, 5, 0}
+	for _, v := range input[1:] {
+		head.Val = v
+		head.Next = &ListNode{}
+		head = head.Next
+	}
+	fmt.Println(spiralMatrix(3, 5, headhead))
 }
 
 func driverjumpgame() {

@@ -127,3 +127,56 @@ func spiralMatrixIII(rows int, cols int, rStart int, cStart int) [][]int {
 
 	return matrix
 }
+
+/** https://leetcode.com/problems/spiral-matrix-iv/description/
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+
+func spiralMatrix(m int, n int, head *ListNode) [][]int {
+	total := n * m
+	count := 0
+	matrix := make([][]int, total)
+	for i := 0; i < n; i++ {
+		matrix[i] = make([]int, m)
+	}
+	r, c, dr, dc := 0, 0, 0, 1
+	v, h := 0, 0
+	for count <= total {
+		if head == nil {
+			matrix[r][c] = -1
+		} else {
+			matrix[r][c] = head.Val
+		}
+		head = head.Next
+		r += dr
+		c += dc
+
+		if dc > 0 && c >= (n-h) {
+			dc = 0
+			dr = 1
+			c--
+			r++
+		} else if dc < 0 && c <= (h-1) {
+			dc = 0
+			dr = -1
+			c++
+			r--
+		} else if dr > 0 && r >= (m-v) {
+			dc = -1
+			dr = 0
+			c--
+			r--
+		} else if dr < 0 && r <= (v-1) {
+			dc = 1
+			dr = 0
+			c++
+			r++
+		}
+	}
+
+	return matrix
+}
